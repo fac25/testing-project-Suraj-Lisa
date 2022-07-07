@@ -61,7 +61,7 @@ for (let i = 0; i < close.length; i++) {
 //     listItemHome[i].appendChild(checkBtn);
 // }
 
-// Checks Test List On Button Click
+// Checks Test Item On Button Click
 
 // const check = document.querySelectorAll('.checkBtn');
 // for(let i = 0; i < check.length; i++) {
