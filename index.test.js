@@ -8,8 +8,8 @@ test("Testing Shouls Pass", () => {
 
 
 test("Submitting a new task adds it to the list", () => {
-     const input = document.querySelector("input");
-     const button = document.querySelector("button");
+     let input = document.querySelector("input");
+     let button = document.querySelector("button");
      input.value = "Write tests";
      button.click();
      const list = document.querySelector("li");
@@ -17,4 +17,5 @@ test("Submitting a new task adds it to the list", () => {
      equal (list.textContent, input.value + "\u00D7");
      //x is appended symbol for deleting items of list
      list.remove();
+     input.value="";
     });
