@@ -50,15 +50,22 @@ ul {
 }
 
 ul li {
-background:var(--secondary);
-color: var(--primary);
-position: relative;
-font-size: 18px;
-transition: 0.2s;
+  cursor: pointer;
+  background:var(--secondary);
+  color: var(--primary);
+  position: relative;
+  font-size: 18px;
+  transition: 0.2s;
+}
+
+ul li:hover {
+  background: rgb(102, 102, 102);
 }
 
 li {
   margin: 1rem;
+  text-align: center;
+  list-style: none;
 }
 
 input {
@@ -101,6 +108,7 @@ input {
   padding: 0 3vh;
   font-size: 1.5em;
   background-color: var(--secondary);
+  /* background-color: #f44336; */
   border: none;
 }
 
@@ -109,3 +117,41 @@ input {
   color: white;
 }
 
+/* Check Button */
+
+/* .checkBtn {
+  position: absolute;
+  cursor: pointer;
+  top:0;
+  left: 0;
+  bottom: 0;
+  padding: 0 1.8vh;
+  font-size: 1.3em;
+  background-color: #10d00c;
+  border: none;
+}
+
+.checkBtn:hover {
+  background-color: rgb(0, 0, 0);
+} */
+
+/* Adds Strike Out Line When Checked */
+
+ul li.checked {
+  background: #888;
+  color: #fff;
+  text-decoration: line-through;
+  list-style: none;
+}
+
+ul li.checked::before {
+  content: '';
+  position: absolute;
+  border-color: #fff;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  left: 16px;
+  transform: rotate(45deg);
+  height: 15px;
+  width: 7px;
+}
