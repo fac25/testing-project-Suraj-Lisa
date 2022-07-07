@@ -5,7 +5,7 @@
 
 [view page here](https://fac25.github.io/testing-project-Suraj-Lisa/)
 
-- [ ] Add tasks to a list so that I can keep track of them
+- [x] Add tasks to a list so that I can keep track of them
 
 test("Submitting a new task adds it to the list", () => {
   // test goes here
