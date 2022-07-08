@@ -1,13 +1,17 @@
 // --------------------- Creates new list item when clicking add button ---------------------
+const input = document.querySelector("input")
 const addBtn = document.querySelector("button");
 
-addBtn.addEventListener("click", (e) => {
+const addItems = () => {
     let listItem = document.createElement("li");
     let list = document.querySelector("ul")
     let task = document.querySelector("input").value;
     let text = document.createTextNode(task);
     list.appendChild(listItem);
     listItem.appendChild(text);
+
+    //trying to remove text in input field, after task is added
+    task.value="";
 
     if (task == "") {
         alert("Please add some tasks");
@@ -27,7 +31,20 @@ addBtn.addEventListener("click", (e) => {
         ele.style.display = 'none';
     }
 
+   
+}
+
+//event listener for clicking the button
+addBtn.addEventListener("click", (e) => {
+addItems();
 });
+//event listener for pressing enter
+input.addEventListener("keyup", (e) => {
+    if (e.key === "Enter") {
+        e.preventDefault();
+        addItems();
+    }
+})
 
 // --------------------- Test Items ---------------------
 
