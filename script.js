@@ -75,7 +75,12 @@ for (let i = 0; i < close.length; i++) {
 const uList = document.querySelector('ul');
 
 uList.addEventListener('click', function(ev) {
-    if (ev.target.tagName === 'LI') {
-        ev.target.classList.toggle('checked');
+    let element = ev.target;
+    let parent = element.parentElement;
+
+    if (element.tagName === 'LI') {
+        element.classList.toggle('checked');
+        parent.insertBefore(element, parent.lastchild)
     }
 }, false);
+
