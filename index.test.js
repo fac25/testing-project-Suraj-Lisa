@@ -1,10 +1,9 @@
-// // --------------------- Test Driven Development ---------------------
-
 // --------------------------------------------
 // Test For Adding New Task
 // --------------------------------------------
 
 // test("Submitting a new task adds it to the list", () => {
+
 //      let input = document.querySelector("input");
 //      let button = document.querySelector("button");
 //      input.value = "Write tests";
@@ -15,13 +14,14 @@
 //      //x is appended symbol for deleting items of list
 //      list.remove();
 //      input.value="";
-//     });
+//  });
 
 // --------------------------------------------
-// Test For Close Button 
+// Test 1 For Close Button 
 // --------------------------------------------
 
-test("Clicking close button, changes item display to none", () => {
+test("Deleting an entry removes it from the list", () => {
+
     let test1 = document.getElementById('test1')
     let test1closeBtn = document.getElementById('close1');
 
@@ -34,5 +34,28 @@ test("Clicking close button, changes item display to none", () => {
 })
 
 // --------------------------------------------
-// Test For Checking Task
+// Test 2 For Checking Task
 // --------------------------------------------
+
+test("Checking an entry marks it as complete", () => {
+
+    let test2 = document.getElementById('test2')
+    test2.click()
+
+    let actual = test2.className;
+    let expected = 'checked';
+
+    equal(actual, expected)
+
+})
+
+test("Clicking 'checked' item unchecks item", () => {
+    
+    let test2 = document.getElementById('test2')
+    test2.click();
+
+    let actual = test2.className;
+    let expected = '';
+
+    equal(actual, expected, `expected '${expected}' and recieved '${actual}'`)
+})

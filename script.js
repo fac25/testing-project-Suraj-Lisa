@@ -88,16 +88,22 @@ for (let i = 0; i < close.length; i++) {
 //     }
 // }
 
-// Checks List On Item Click
+// Checks Item on 'click'
 const uList = document.querySelector('ul');
 
-uList.addEventListener('click', function(ev) {
-    let element = ev.target;
+uList.addEventListener('click', function(event) {
+
+    let element = event.target;
     let parent = element.parentElement;
 
-    if (element.tagName === 'LI') {
-        element.classList.toggle('checked');
-        parent.insertBefore(element, parent.lastchild)
-    }
-}, false);
+    if (element.className === '') {
 
+        element.className = 'checked'; // Checks task
+        parent.appendChild(element, element.parentElement.lastChild); // places element as lastchild
+
+    } else if (element.className === 'checked') {
+        element.className = ''; // Unchecks 
+        parent.insertBefore(element, element.parentElement.firstChild); // places element as firstchild
+    }
+
+}, false);
