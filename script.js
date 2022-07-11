@@ -10,9 +10,6 @@ const addItems = () => {
     list.appendChild(listItem);
     listItem.appendChild(text);
 
-    //trying to remove text in input field, after task is added
-    task.value="";
-
     if (task == "") {
         alert("Please add some tasks");
     }
@@ -30,6 +27,8 @@ const addItems = () => {
         let ele = this.parentElement;
         ele.style.display = 'none';
     }
+//removing text from input after task is added to the list
+     document.querySelector("input").value ="";
 
    
 }
