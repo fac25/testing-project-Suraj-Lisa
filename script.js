@@ -1,6 +1,7 @@
 // --------------------- Creates new list item when clicking add button ---------------------
 const input = document.querySelector("input")
 const addBtn = document.querySelector("button");
+const hideBtn = document.querySelector(".toggle");
 
 const addItems = () => {
     let listItem = document.createElement("li");
@@ -9,9 +10,6 @@ const addItems = () => {
     let text = document.createTextNode(task);
     list.appendChild(listItem);
     listItem.appendChild(text);
-
-    //trying to remove text in input field, after task is added
-    task.value="";
 
     if (task == "") {
         alert("Please add some tasks");
@@ -30,8 +28,8 @@ const addItems = () => {
         let ele = this.parentElement;
         ele.style.display = 'none';
     }
-
-   
+//removing text from input after task is added to the list
+     document.querySelector("input").value ="";   
 }
 
 //event listener for clicking the button
@@ -107,3 +105,26 @@ uList.addEventListener('click', function(event) {
     }
 
 }, false);
+
+
+// hide/show toggle button
+
+hideBtn.addEventListener("click", (e) => {
+    let items = document.querySelector("li");
+    console.log(items);
+    for (let i=0; i < items.length; i++) {
+        items.classList.toggle("hide")
+    }
+    // items.forEach(() => {
+    //     console.log("hi")
+    //     items.classList.add("hide");
+    // })
+    // let items = document.querySelectorAll(".checked");
+    // Array.from(items);
+    // console.log(items);
+    // items.forEach(item, () => {
+    //     item.classList.add("hide");
+    // })
+   
+    });
+
