@@ -110,12 +110,21 @@ uList.addEventListener('click', function(event) {
 // hide/show toggle button
 
 hideBtn.addEventListener("click", (e) => {
-    let items = document.querySelectorAll(".checked");
-    Array.from(items);
+    let items = document.querySelector("li");
     console.log(items);
-    // item.forEach(i, () => {
+    for (let i=0; i < items.length; i++) {
+        items.classList.toggle("hide")
+    }
+    // items.forEach(() => {
+    //     console.log("hi")
+    //     items.classList.add("hide");
+    // })
+    // let items = document.querySelectorAll(".checked");
+    // Array.from(items);
+    // console.log(items);
+    // items.forEach(item, () => {
     //     item.classList.add("hide");
     // })
-    items.classList.add("hide");
+   
     });
 
