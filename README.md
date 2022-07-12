@@ -14,11 +14,11 @@ test("Submitting a new task adds it to the list", () => {
     template('Write tests')
 
     //Results
-     const list = document.querySelector("li");
-     const actual = list.textContent;
-     const expected = 'Write tests' + "\u00D7";
+    const list = document.querySelector("li");
+    const actual = list.textContent;
+    const expected = 'Write tests' + "\u00D7";
 
-     equal(actual, expected)
+    equal(actual, expected)
 
     // Resets Field
     document.querySelector('#list').innerHTML = "";
