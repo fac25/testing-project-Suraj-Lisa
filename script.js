@@ -9,12 +9,13 @@ const addItems = () => {
     let list = document.querySelector("ul")
     let task = document.querySelector("input").value;
     let text = document.createTextNode(task);
-    list.appendChild(listItem);
-    listItem.appendChild(text);
 
     if (task == "") {
         alert("Please add some tasks");
-    }
+    } else {
+
+    list.appendChild(listItem);
+    listItem.appendChild(text);
 
 // Adds "close" button to the new list item
     let closeBtn = document.createElement("button"); 
@@ -32,19 +33,13 @@ const addItems = () => {
 //removing text from input after task is added to the list
      document.querySelector("input").value ="";   
 }
+}
 
 //event listener for clicking the button
 addBtn.addEventListener("click", (e) => {
     e.preventDefault();
 addItems();
 });
-// //event listener for pressing enter
-// input.addEventListener("keyup", (e) => {
-//     if (e.key === "Enter") {
-//         e.preventDefault();
-//         addItems();
-//     }
-// })
 
 // --------------------- Test Items ---------------------
 
