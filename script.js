@@ -5,6 +5,7 @@ const hideBtn = document.querySelector(".toggle");
 
 const addItems = () => {
     let listItem = document.createElement("li");
+    listItem.tabIndex = 0;
     let list = document.querySelector("ul")
     let task = document.querySelector("input").value;
     let text = document.createTextNode(task);
@@ -34,15 +35,16 @@ const addItems = () => {
 
 //event listener for clicking the button
 addBtn.addEventListener("click", (e) => {
+    e.preventDefault();
 addItems();
 });
-//event listener for pressing enter
-input.addEventListener("keyup", (e) => {
-    if (e.key === "Enter") {
-        e.preventDefault();
-        addItems();
-    }
-})
+// //event listener for pressing enter
+// input.addEventListener("keyup", (e) => {
+//     if (e.key === "Enter") {
+//         e.preventDefault();
+//         addItems();
+//     }
+// })
 
 // --------------------- Test Items ---------------------
 
