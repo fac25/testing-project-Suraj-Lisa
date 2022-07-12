@@ -1,64 +1,101 @@
 // --------------------------------------------
-// Test For Adding New Task
+// Test 1 FOR ADDING NEW TASK
 // --------------------------------------------
 
-// test("Submitting a new task adds it to the list", () => {
+test("Submitting a new task adds it to the list", () => {
 
-//      let input = document.querySelector("input");
-//      let button = document.querySelector("button");
-//      input.value = "Write tests";
-//      button.click();
-//      const list = document.querySelector("li");
-//      console.log(list);
-//      equal (list.textContent, input.value + "\u00D7");
-//      //x is appended symbol for deleting items of list
-//      list.remove();
-//      input.value="";
-//  });
+    //  let input = document.querySelector("input");
+    //  let button = document.querySelector("button");
+    //  input.value = "Write tests";
+    //  button.click();
+    //  const list = document.querySelector("li");
+    //  console.log(list);
+    //  equal (list.textContent, input.value + "\u00D7");
+    //  //x is appended symbol for deleting items of list
+    //  list.remove();
+    //  input.value="";
+
+    // Creates a new task
+    template('Write tests')
+
+    //Results
+     const list = document.querySelector("li");
+     const actual = list.textContent;
+     const expected = 'Write tests' + "\u00D7";
+
+     equal(actual, expected)
+
+    // Resets Field
+    document.querySelector('#list').innerHTML = "";
+ });
 
 // --------------------------------------------
-// Test 1 For Close Button 
+// Test 2 FOR CLOSE BUTTON
 // --------------------------------------------
 
 test("Deleting an entry removes it from the list", () => {
 
-    let test1 = document.getElementById('test1')
-    let test1closeBtn = document.getElementById('close1');
+    // Creates a test task
+    template('Test');
 
-    test1closeBtn.click(); // Hides Item
+    // Should delete task
+    const closeBtn = document.querySelector('.closeBtn')
+    closeBtn.click();
 
-    const actual = test1.style.display;
-    const expected = 'none';
+    // Results
+    const actual = document.getElementById('task').style.display;
+    const expected = 'none'
 
-    equal(actual, expected);
+    equal(actual, expected)
+
+    // Resets Field
+    document.querySelector('#list').innerHTML = "";
 })
 
 // --------------------------------------------
-// Test 2 For Checking Task
+// Test 3 FOR CHECKING TASK
 // --------------------------------------------
 
 test("Checking an entry marks it as complete", () => {
 
-    let test2 = document.getElementById('test2')
-    test2.click()
+    // Creates a task
+    template('Test');
 
-    let actual = test2.className;
-    let expected = 'checked';
+    // Should check task
+    const task = document.getElementById('task');
+    task.click();
 
-    equal(actual, expected)
+    // Results
+    const actual = task.className;
+    const expected = 'checked';
 
-})
+    equal(actual, expected);
 
-test("Clicking 'checked' item unchecks item", () => {
-    
-    let test2 = document.getElementById('test2')
-    test2.click();
+     // Resets Field
+     document.querySelector('#list').innerHTML = "";
+ })
 
-    let actual = test2.className;
-    let expected = '';
+ test("Clicking 'checked' item unchecks item", () => {
+
+    template('Test');
+
+    const task = document.getElementById('task');
+    task.click(); // First click should check task
+    task.click(); // Second click should uncheck task
+
+    // Results
+    let actual = task.className;
+    let expected = "";
 
     equal(actual, expected, `expected '${expected}' and recieved '${actual}'`)
-})
+
+     // Resets Field
+    document.querySelector('#list').innerHTML = "";
+ } )
+
+// --------------------------------------------
+// Test 4 
+// --------------------------------------------
 
 //this test triggers the if-condition to check for input
 // test("after adding an item to the list, the textbar is empty", () => {
