@@ -126,7 +126,26 @@ hideBtn.addEventListener("click", (e) => {
     // console.log(items);
     // items.forEach(item, () => {
     //     item.classList.add("hide");
-    // })
-   
-    });
+    })
+
+    // Creates a template task for testing
+
+    const template = function(e) {
+        const task = document.createElement('li')
+        task.id = 'task'
+        task.innerHTML = e;
+
+        let closeBtn = document.createElement("button"); 
+        let closeIcon = document.createTextNode("\u00D7");
+        closeBtn.className = 'closeBtn';
+        closeBtn.appendChild(closeIcon)
+
+        closeBtn.onclick = function() {
+            let ele = this.parentElement;
+            ele.style.display = 'none';
+        }
+
+        uList.appendChild(task);
+        task.appendChild(closeBtn);
+    }
 
