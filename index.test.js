@@ -1,5 +1,5 @@
 // --------------------------------------------
-// Test 1 For Adding New Task
+// Test 1 FOR ADDING NEW TASK
 // --------------------------------------------
 
 test("Submitting a new task adds it to the list", () => {
@@ -15,7 +15,7 @@ test("Submitting a new task adds it to the list", () => {
     //  list.remove();
     //  input.value="";
 
-    // Creates a test task
+    // Creates a new task
     template('Write tests')
 
     //Results
@@ -24,16 +24,19 @@ test("Submitting a new task adds it to the list", () => {
      const expected = 'Write tests' + "\u00D7";
 
      equal(actual, expected)
+
+    // Resets Field
+    document.querySelector('#list').innerHTML = "";
  });
 
 // --------------------------------------------
-// Test 2 For Close Button 
+// Test 2 FOR CLOSE BUTTON
 // --------------------------------------------
 
 test("Deleting an entry removes it from the list", () => {
 
     // Creates a test task
-    template();
+    template('Test');
 
     // Should delete task
     const closeBtn = document.querySelector('.closeBtn')
@@ -49,15 +52,14 @@ test("Deleting an entry removes it from the list", () => {
     document.querySelector('#list').innerHTML = "";
 })
 
-
 // --------------------------------------------
-// Test 3 For Checking Task
+// Test 3 FOR CHECKING TASK
 // --------------------------------------------
 
 test("Checking an entry marks it as complete", () => {
 
     // Creates a task
-    template();
+    template('Test');
 
     // Should check task
     const task = document.getElementById('task');
@@ -75,7 +77,7 @@ test("Checking an entry marks it as complete", () => {
 
  test("Clicking 'checked' item unchecks item", () => {
 
-    template();
+    template('Test');
 
     const task = document.getElementById('task');
     task.click(); // First click should check task
