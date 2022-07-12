@@ -91,8 +91,7 @@ for (let i = 0; i < close.length; i++) {
 // Checks Item on 'click'
 const uList = document.querySelector('ul');
 
-uList.addEventListener('click', function(event) {
-
+const check = () => {
     let element = event.target;
     let parent = element.parentElement;
 
@@ -105,8 +104,19 @@ uList.addEventListener('click', function(event) {
         element.className = ''; // Unchecks 
         parent.insertBefore(element, element.parentElement.firstChild); // places element as firstchild
     }
+}
 
+uList.addEventListener('click', function(event) {
+    check()
 }, false);
+
+//event listener for pressing enter
+uList.addEventListener("keyup", (e) => {
+    if (e.key === "Enter") {
+        e.preventDefault();
+        check()
+    }
+})
 
 
 // hide/show toggle button
