@@ -89,7 +89,7 @@ test("Checking an entry marks it as complete", () => {
  } )
 ```
 
-- [ ] Use all the features of the app without a mouse
+- [x] Use all the features of the app without a mouse
 
 # Stretch goal:
 
@@ -101,7 +101,7 @@ test("Toggling the filter hides completed tasks from the list", () => {
 
 # Acceptance Criteria 
 
-- [ ] A working to-do list
-- [ ] Tests for (at least) each user story
-- [ ] A responsive, mobile-first design
-- [ ] Ensure your app is accessible to as many different users as possible
+- [x] A working to-do list
+- [x] Tests for (at least) each user story
+- [x] A responsive, mobile-first design
+- [x] Ensure your app is accessible to as many different users as possible
