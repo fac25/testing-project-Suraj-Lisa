@@ -34,15 +34,16 @@ const addItems = () => {
 
 //event listener for clicking the button
 addBtn.addEventListener("click", (e) => {
+    e.preventDefault();
 addItems();
 });
-//event listener for pressing enter
-input.addEventListener("keyup", (e) => {
-    if (e.key === "Enter") {
-        e.preventDefault();
-        addItems();
-    }
-})
+// //event listener for pressing enter
+// input.addEventListener("keyup", (e) => {
+//     if (e.key === "Enter") {
+//         e.preventDefault();
+//         addItems();
+//     }
+// })
 
 // --------------------- Test Items ---------------------
 

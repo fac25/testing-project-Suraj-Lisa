@@ -12,6 +12,10 @@ body {
   color: var(--secondary);
 }
 
+:focus {
+  outline: 3px dashed red;
+}
+
 /* phones */
 @media screen and (max-width: 480px) {
 
