@@ -9,12 +9,13 @@ const addItems = () => {
     let list = document.querySelector("ul")
     let task = document.querySelector("input").value;
     let text = document.createTextNode(task);
-    list.appendChild(listItem);
-    listItem.appendChild(text);
 
     if (task == "") {
         alert("Please add some tasks");
-    }
+    } else {
+
+    list.appendChild(listItem);
+    listItem.appendChild(text);
 
 // Adds "close" button to the new list item
     let closeBtn = document.createElement("button"); 
@@ -32,19 +33,13 @@ const addItems = () => {
 //removing text from input after task is added to the list
      document.querySelector("input").value ="";   
 }
+}
 
 //event listener for clicking the button
 addBtn.addEventListener("click", (e) => {
     e.preventDefault();
 addItems();
 });
-// //event listener for pressing enter
-// input.addEventListener("keyup", (e) => {
-//     if (e.key === "Enter") {
-//         e.preventDefault();
-//         addItems();
-//     }
-// })
 
 // --------------------- Test Items ---------------------
 
@@ -91,8 +86,7 @@ for (let i = 0; i < close.length; i++) {
 // Checks Item on 'click'
 const uList = document.querySelector('ul');
 
-uList.addEventListener('click', function(event) {
-
+const check = () => {
     let element = event.target;
     let parent = element.parentElement;
 
@@ -105,8 +99,19 @@ uList.addEventListener('click', function(event) {
         element.className = ''; // Unchecks 
         parent.insertBefore(element, element.parentElement.firstChild); // places element as firstchild
     }
+}
 
+uList.addEventListener('click', function(event) {
+    check()
 }, false);
+
+//event listener for pressing enter
+uList.addEventListener("keyup", (e) => {
+    if (e.key === "Enter") {
+        e.preventDefault();
+        check()
+    }
+})
 
 
 // hide/show toggle button
