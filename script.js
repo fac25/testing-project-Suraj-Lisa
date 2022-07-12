@@ -5,6 +5,7 @@ const hideBtn = document.querySelector(".toggle");
 
 const addItems = () => {
     let listItem = document.createElement("li");
+    listItem.tabIndex = 0;
     let list = document.querySelector("ul")
     let task = document.querySelector("input").value;
     let text = document.createTextNode(task);
