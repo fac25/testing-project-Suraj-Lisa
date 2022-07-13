@@ -60,6 +60,7 @@ ul li {
   position: relative;
   font-size: 18px;
   transition: 0.2s;
+  padding: 0.5em 8em 0.5em 0.5em; /* Fixes the overflow text hidden behind close button... could not figure out how to fix it*/
 }
 
 ul li:hover {
