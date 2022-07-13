@@ -106,8 +106,3 @@ test("Checking an entry marks it as complete", () => {
 //     equal(input.value, expected, "pass: expected and received an empty string");
 // })
 
-template('TASK 1...........')
-template('TASK 2...........')
-template('TASK 3...........')
-template('TASK 4...........')
-template('TASK 5...........6..........IAM A VERY LONG TASK THAT IS VERY ANNOYING TO DEAL WITH FFS very VERY VERY LONG OMG HOW LONG CAN THIS EVEN GO')
