@@ -148,3 +148,75 @@ uList.addEventListener("keyup", (e) => {
         task.appendChild(closeBtn);
     }
 
+    // Creates a checked template task for testing
+
+    const checkedTemplate = function(e) {
+        const task = document.createElement('li')
+        task.id = 'task'
+        task.innerHTML = e;
+
+        let closeBtn = document.createElement("button"); 
+        let closeIcon = document.createTextNode("\u00D7");
+        closeBtn.className = 'closeBtn';
+        closeBtn.appendChild(closeIcon)
+
+        closeBtn.onclick = function() {
+            let ele = this.parentElement;
+            ele.style.display = 'none';
+        }
+
+        uList.appendChild(task);
+        task.appendChild(closeBtn);
+        task.click();
+    }
+
+         
+    // Filters All Task
+
+    const all = document.querySelector('.all')
+    all.onclick = function() {
+        const fetch = document.getElementsByTagName('LI');
+        
+        for(let i = 0; i < fetch.length; i++) {
+            if (fetch[i].style.display === 'none') {
+                fetch[i].style.display = 'block';
+            }
+        }
+    }
+
+    // Filters Active Task
+
+    const active = document.querySelector('.active')
+
+    active.onclick = function() {
+        const fetch = document.getElementsByTagName('LI');
+
+        for(let i = 0; i < fetch.length; i++) {
+            if (fetch[i].className === 'checked') {
+                 fetch[i].style.display = 'none';
+            }
+                        
+            if(fetch[i].className === "") {
+                fetch[i].style.display = 'block';
+            } 
+        }
+
+    }
+
+    // Filters Completed Task
+
+    const done = document.querySelector('.done')
+    
+    done.onclick = function() {
+        const fetch = document.getElementsByTagName('LI');
+
+        for(let i = 0; i < fetch.length; i++) {
+            if(fetch[i].className === "") {
+                fetch[i].style.display = 'none';
+            }
+
+            if(fetch[i].className === "checked") {
+                fetch[i].style.display = 'block';
+            }
+        }
+    }
