@@ -110,12 +110,12 @@ uList.addEventListener("keyup", (e) => {
 
 // hide/show toggle button
 
-hideBtn.addEventListener("click", (e) => {
-    let items = document.querySelector("li");
-    console.log(items);
-    for (let i=0; i < items.length; i++) {
-        items.classList.toggle("hide")
-    }
+// hideBtn.addEventListener("click", (e) => {
+//     let items = document.querySelector("li");
+//     console.log(items);
+//     for (let i=0; i < items.length; i++) {
+//         items.classList.toggle("hide")
+//     }
     // items.forEach(() => {
     //     console.log("hi")
     //     items.classList.add("hide");
@@ -125,7 +125,7 @@ hideBtn.addEventListener("click", (e) => {
     // console.log(items);
     // items.forEach(item, () => {
     //     item.classList.add("hide");
-    })
+    // })
 
     // Creates a template task for testing
 

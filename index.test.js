@@ -97,7 +97,7 @@ test("Checking an entry marks it as complete", () => {
 // Test 4 
 // --------------------------------------------
 
-//this test triggers the if-condition to check for input
+//this test triggers the if-condition to check for input and sends an alert
 // test("after adding an item to the list, the textbar is empty", () => {
 //     let input = document.querySelector("input");
 //     let button = document.querySelector("button");
