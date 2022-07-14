@@ -10,19 +10,19 @@
 ```js
 test("Submitting a new task adds it to the list", () => {
 
-     let input = document.querySelector("input");
-     let button = document.querySelector("button");
-     input.value = "Write tests";
-     button.click();
-     const list = document.querySelector("li");
-     console.log(list);
-     
-     equal (list.textContent, input.value + "\u00D7");
-     //x is appended symbol for deleting items of list
-     list.remove();
-     input.value="";
-     
-});
+    // Creates a new task
+    template('Write tests')
+
+    //Results
+    const list = document.querySelector("li");
+    const actual = list.textContent;
+    const expected = 'Write tests' + "\u00D7";
+
+    equal(actual, expected)
+
+    // Resets Field
+    document.querySelector('#list').innerHTML = "";
+ });
 ```
 
 - [x] Delete things from the list if I don’t need to do them anymore
@@ -30,15 +30,21 @@ test("Submitting a new task adds it to the list", () => {
 ```js
 test("Deleting an entry removes it from the list", () => {
 
-    let test1 = document.getElementById('test1')
-    let test1closeBtn = document.getElementById('close1');
+    // Creates a test task
+    template('Test');
 
-    test1closeBtn.click(); // Hides Item
+    // Should delete task
+    const closeBtn = document.querySelector('.closeBtn')
+    closeBtn.click();
 
-    const actual = test1.style.display;
-    const expected = 'none';
+    // Results
+    const actual = document.getElementById('task').style.display;
+    const expected = 'none'
 
-    equal(actual, expected);
+    equal(actual, expected)
+
+    // Resets Field
+    document.querySelector('#list').innerHTML = "";
 })
 ```
 
@@ -47,33 +53,55 @@ test("Deleting an entry removes it from the list", () => {
 ```js
 test("Checking an entry marks it as complete", () => {
 
-    let test2 = document.getElementById('test2')
-    test2.click()
+    // Creates a task
+    template('Test');
 
-    let actual = test2.className;
-    let expected = 'checked';
+    // Should check task
+    const task = document.getElementById('task');
+    task.click();
 
-    equal(actual, expected)
+    // Results
+    const actual = task.className;
+    const expected = 'checked';
 
-})
+    equal(actual, expected);
 
-test("Clicking 'checked' item unchecks item", () => {
+     // Resets Field
+     document.querySelector('#list').innerHTML = "";
+ })
 
-    let test2 = document.getElementById('test2')
-    test2.click();
+ test("Clicking 'checked' item unchecks item", () => {
 
-    let actual = test2.className;
-    let expected = '';
+    template('Test');
+
+    const task = document.getElementById('task');
+    task.click(); // First click should check task
+    task.click(); // Second click should uncheck task
+
+    // Results
+    let actual = task.className;
+    let expected = "";
 
     equal(actual, expected, `expected '${expected}' and recieved '${actual}'`)
-})
+
+     // Resets Field
+    document.querySelector('#list').innerHTML = "";
+ } )
 ```
 
-- [ ] Use all the features of the app without a mouse
+- [x] Use all the features of the app without a mouse
 
-Stretch goal:
+# Stretch goal:
+
 - [ ] Filter out completed to-dos from my list so that I can focus on what’s left to do
 
 test("Toggling the filter hides completed tasks from the list", () => {
   // test goes here
 });
+
+# Acceptance Criteria 
+
+- [x] A working to-do list
+- [x] Tests for (at least) each user story
+- [x] A responsive, mobile-first design
+- [x] Ensure your app is accessible to as many different users as possible

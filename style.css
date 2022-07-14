@@ -110,7 +110,7 @@ input {
   bottom: 0;
   padding: 0 3vh;
   font-size: 1.5em;
-  background-color: var(--secondary);
+  /* background-color: var(--secondary); */
   /* background-color: #f44336; */
   border: none;
 }
@@ -182,4 +182,31 @@ ul li.checked::before {
 
 .hide {
   display:none;
+}
+
+/* general CSS */
+
+.center {
+  max-width: 60rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.width-40 {
+  max-width: 40rem;
+}
+
+.width-60 {
+  max-width: 60rem;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+.justify {
+  justify-content: space-between;
 }

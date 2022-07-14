@@ -14,25 +14,40 @@ const addItems = () => {
         alert("Please add some tasks");
     } else {
 
-    list.appendChild(listItem);
-    listItem.appendChild(text);
+        list.appendChild(listItem);
+        listItem.appendChild(text);
 
-// Adds "close" button to the new list item
-    let closeBtn = document.createElement("button"); 
-    let closeIcon = document.createTextNode("\u00D7"); // Close Icon
-    closeBtn.className = 'closeBtn';
-    
-    closeBtn.appendChild(closeIcon);
-    listItem.appendChild(closeBtn);
+    // Adds "close" button to the new list item
+        let closeBtn = document.createElement("button"); 
+        let closeIcon = document.createTextNode("\u00D7"); // Close Icon
+        closeBtn.className = 'closeBtn';
+        
+        closeBtn.appendChild(closeIcon);
+        listItem.appendChild(closeBtn);
 
-// Close Button deletes new list item
-    closeBtn.onclick = function() {
+    // Close Button deletes new list item
+        closeBtn.onclick = function() {
         let ele = this.parentElement;
         ele.style.display = 'none';
+        }
+    //removing text from input after task is added to the list
+        document.querySelector("input").value ="";   
+
+    // Adds "check" Button To list Item
+        // let checkBtn = document.createElement("button");
+        // let checkIcon = document.createTextNode("✅")
+        // checkBtn.className = 'checkBtn';
+        // checkBtn.appendChild(checkIcon);
+        // listItem.appendChild(checkBtn);
+
+    // Checks list Item On Button Click
+        // checkBtn.onclick = function() {
+        //     let ele = this.parentElement;
+        //     ele.classList.toggle('checked')
+        // }
+
     }
-//removing text from input after task is added to the list
-     document.querySelector("input").value ="";   
-}
+
 }
 
 //event listener for clicking the button
@@ -62,26 +77,6 @@ for (let i = 0; i < close.length; i++) {
         ele.style.display = 'none';
     }
 }
-
-// Adds "check" Button To Test Item
-
-// for (let i = 0; i < listItemHome.length; i++) {
-//     let checkBtn = document.createElement("button");
-//     let checkIcon = document.createTextNode("✅")
-//     checkBtn.className = 'checkBtn';
-//     checkBtn.appendChild(checkIcon);
-//     listItemHome[i].appendChild(checkBtn);
-// }
-
-// Checks Test Item On Button Click
-
-// const check = document.querySelectorAll('.checkBtn');
-// for(let i = 0; i < check.length; i++) {
-//     check[i].onclick = function() {
-//         let ele = this.parentElement;
-//         ele.classList.toggle('checked')
-//     }
-// }
 
 // Checks Item on 'click'
 const uList = document.querySelector('ul');
@@ -113,7 +108,6 @@ uList.addEventListener("keyup", (e) => {
     }
 })
 
-
 // hide/show toggle button
 
 hideBtn.addEventListener("click", (e) => {
@@ -131,7 +125,26 @@ hideBtn.addEventListener("click", (e) => {
     // console.log(items);
     // items.forEach(item, () => {
     //     item.classList.add("hide");
-    // })
-   
-    });
+    })
+
+    // Creates a template task for testing
+
+    const template = function(e) {
+        const task = document.createElement('li')
+        task.id = 'task'
+        task.innerHTML = e;
+
+        let closeBtn = document.createElement("button"); 
+        let closeIcon = document.createTextNode("\u00D7");
+        closeBtn.className = 'closeBtn';
+        closeBtn.appendChild(closeIcon)
+
+        closeBtn.onclick = function() {
+            let ele = this.parentElement;
+            ele.style.display = 'none';
+        }
+
+        uList.appendChild(task);
+        task.appendChild(closeBtn);
+    }
 
