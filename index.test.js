@@ -106,3 +106,4 @@ test("Checking an entry marks it as complete", () => {
 //     equal(input.value, expected, "pass: expected and received an empty string");
 // })
 
+// Test 5 Filter
