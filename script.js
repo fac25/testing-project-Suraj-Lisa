@@ -32,7 +32,22 @@ const addItems = () => {
         }
     //removing text from input after task is added to the list
         document.querySelector("input").value ="";   
-}
+
+    // Adds "check" Button To list Item
+        // let checkBtn = document.createElement("button");
+        // let checkIcon = document.createTextNode("✅")
+        // checkBtn.className = 'checkBtn';
+        // checkBtn.appendChild(checkIcon);
+        // listItem.appendChild(checkBtn);
+
+    // Checks list Item On Button Click
+        // checkBtn.onclick = function() {
+        //     let ele = this.parentElement;
+        //     ele.classList.toggle('checked')
+        // }
+
+    }
+
 }
 
 //event listener for clicking the button
@@ -63,26 +78,6 @@ for (let i = 0; i < close.length; i++) {
     }
 }
 
-// Adds "check" Button To Test Item
-
-// for (let i = 0; i < listItemHome.length; i++) {
-//     let checkBtn = document.createElement("button");
-//     let checkIcon = document.createTextNode("✅")
-//     checkBtn.className = 'checkBtn';
-//     checkBtn.appendChild(checkIcon);
-//     listItemHome[i].appendChild(checkBtn);
-// }
-
-// Checks Test Item On Button Click
-
-// const check = document.querySelectorAll('.checkBtn');
-// for(let i = 0; i < check.length; i++) {
-//     check[i].onclick = function() {
-//         let ele = this.parentElement;
-//         ele.classList.toggle('checked')
-//     }
-// }
-
 // Checks Item on 'click'
 const uList = document.querySelector('ul');
 
@@ -112,7 +107,6 @@ uList.addEventListener("keyup", (e) => {
         check()
     }
 })
-
 
 // hide/show toggle button
 
