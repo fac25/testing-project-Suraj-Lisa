@@ -60,7 +60,7 @@ test("Clicking 'checked' item unchecks item", () => {
     equal(actual, expected, `expected '${expected}' and recieved '${actual}'`)
 })
 
-//this test triggers the if-condition to check for input
+//this test triggers the if-condition to check for input and sends an alert
 // test("after adding an item to the list, the textbar is empty", () => {
 //     let input = document.querySelector("input");
 //     let button = document.querySelector("button");
