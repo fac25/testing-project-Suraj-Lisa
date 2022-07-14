@@ -93,11 +93,7 @@ test("Checking an entry marks it as complete", () => {
 
 # Stretch goal:
 
-- [ ] Filter out completed to-dos from my list so that I can focus on what’s left to do
-
-test("Toggling the filter hides completed tasks from the list", () => {
-  // test goes here
-});
+- [x] Filter out completed to-dos from my list so that I can focus on what’s left to do
 
 # Acceptance Criteria 
 
